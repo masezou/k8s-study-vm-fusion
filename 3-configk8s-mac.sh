@@ -124,6 +124,10 @@ echo "" >>Your_kind_kubeconfig-`hostname`
 kubectl config get-contexts
 
 EXTERNALIP=`kubectl -n kubernetes-dashboard get service dashboard-service-lb| awk '{print $4}' | tail -n 1`
+
+
+# Added static route for metallb
+sudo route add -net 172.18.255.0 -gateway `vctl ps | grep k10-demo | cut -d " " -f 10`
 echo ""
 echo "*************************************************************************************"
 echo "Next Step"
