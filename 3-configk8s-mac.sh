@@ -29,7 +29,7 @@ data:
     - name: default
       protocol: layer2
       addresses:
-      - 192.168.163.20-192.168.163.30
+      - 172.18.255.200-172.18.255.250
 EOF
 
 # metric server
